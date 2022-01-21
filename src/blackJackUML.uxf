@@ -1,0 +1,64 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>110</x><y>240</y><w>220</w><h>290</h></coordinates><panel_attributes>&lt;Class&gt;
+Dealer
+--
+&lt;Properties&gt;
+ArrayList&lt;String&gt; dealerCards;
+ArrayList&lt;String&gt; actualDeck;
+ArrayList&lt;String&gt; referenceDeck;
+int total;
+boolean isBusted;
+boolean isDone;
+--
+&lt;Methods&gt;
+dealCard(playerObj or dealerObj);
+dealStart(playerObj or dealerObj);
+calculateTotal(playerObj or dealerObj);
+calculateTotal(playerObj or dealerObj);
+showCards(playerObj or dealerObj);
+promptAndHit(playerObj);
+checkPlayerDone(playerObj);
+checkIsBusted(playerObj or dealerObj);
+checkIsDone(playerObj or dealerObj);</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>240</y><w>210</w><h>180</h></coordinates><panel_attributes>&lt;Class&gt;
+Main
+--
+&lt;Attributes&gt;
+--
+&lt;Methods&gt;
+main();
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>330</x><y>0</y><w>220</w><h>180</h></coordinates><panel_attributes>&lt;Class&gt;
+Player
+--
+&lt;Properties&gt;
+int playerTotal;
+ArrayList&lt;String&gt; playerCards;
+boolean isBusted;
+boolean isDone;
+
+--
+&lt;Methods&gt;
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>440</x><y>460</y><w>380</w><h>300</h></coordinates><panel_attributes>Note..
+main {
+     print("Welcome to blackjack!");
+     Dealer dealer = new Dealer();
+     Player playerJason = new Player();
+     dealer.dealStart(playerJason);
+     dealer.dealStart(dealer);
+     dealer.showCards(playerJason);
+     dealer.showCards(dealer);
+     dealer.promptAndHit(playerJason); 
+// inside promptAndHit() has function to prompt for hit and if n then player.isDone becomes true, if not then dealer.dealCard(playerJason) is ran and the process is repeated.
+     if (playerJason.isBusted == true) {
+          System.out.println("Sorry the dealer won this time.");
+}
+     else if (playerJason.isBusted == false &amp;&amp; dealer.total &lt; 16) {
+          while (dealer.total &lt; 16) {
+               dealer.dealCard(dealer);
+}
+     assignWinnerAndFinishProgram();
+
+}
+     
+
+}</panel_attributes><additional_attributes></additional_attributes></element></diagram>
